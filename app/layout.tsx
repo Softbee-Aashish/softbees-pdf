@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import AdSenseScript from '@/lib/ads/adsense-script';
+import AdComponent from '@/lib/ads/AdComponent';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,9 +27,40 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50`}
       >
-        {children}
+        <AdSenseScript />
+
+        {/* Top Ad */}
+        <div className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
+          <div className="container mx-auto px-4 py-2 flex justify-center">
+            <AdComponent position="top" className="mx-auto" />
+          </div>
+        </div>
+
+        <div className="container mx-auto px-4 flex flex-col lg:flex-row py-8 gap-8">
+          {/* Left Sidebar Ad (Hidden on mobile) */}
+          <div className="hidden lg:block w-[160px] shrink-0 sticky top-32 self-start">
+            <AdComponent position="sidebar-left" />
+          </div>
+
+          {/* Main Content */}
+          <div className="flex-1 min-w-0">
+            {children}
+          </div>
+
+          {/* Right Sidebar Ad (Hidden on mobile) */}
+          <div className="hidden lg:block w-[160px] shrink-0 sticky top-32 self-start">
+            <AdComponent position="sidebar-right" />
+          </div>
+        </div>
+
+        {/* Bottom Ad */}
+        <footer className="mt-auto border-t bg-white">
+          <div className="container mx-auto px-4 py-8 flex justify-center">
+            <AdComponent position="bottom" className="mx-auto" />
+          </div>
+        </footer>
       </body>
     </html>
   );
