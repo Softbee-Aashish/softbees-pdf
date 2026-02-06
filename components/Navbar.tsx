@@ -9,17 +9,15 @@ import Link from 'next/link';
 
 export default function Navbar() {
     return (
-        <nav className="w-full bg-[#111F35] text-white shadow-md">
+        <nav className="w-full bg-white text-[#111F35] shadow-md">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-3 group">
-                        <div className="p-2 bg-white/10 rounded-lg group-hover:bg-white/20 transition-colors">
-                            <FileText className="w-8 h-8 text-[#F63049]" />
+                    <Link href="/" className="flex items-center gap-2 text-[#111F35] font-bold text-xl hover:opacity-80 transition-opacity">
+                        <div className="w-8 h-8 bg-[#F63049] rounded-lg flex items-center justify-center text-white">
+                            <span className="text-sm">SB</span>
                         </div>
-                        <span className="text-2xl font-bold tracking-tight text-white">
-                            SOFT BEES
-                        </span>
+                        <span>SOFT BEES</span>
                     </Link>
 
                     {/* Navigation */}
