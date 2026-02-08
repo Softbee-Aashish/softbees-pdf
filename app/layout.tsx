@@ -39,6 +39,13 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
 
+        {/* Monetag Onclick Script - Zone 10586300 */}
+        <Script id="monetag-onclick" strategy="afterInteractive">
+          {`
+            (function(s){s.dataset.zone='10586300',s.src='https://al5sm.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
+          `}
+        </Script>
+
         {/* Main Content Wrapper - 100% Width, Flex Column */}
         <div className="flex flex-col min-h-screen">
           {children}
