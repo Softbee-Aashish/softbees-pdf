@@ -4,8 +4,7 @@
  */
 'use client';
 
-import { FileText } from 'lucide-react';
-import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Navbar() {
     return (
@@ -13,11 +12,16 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2 text-[#111F35] font-bold text-xl hover:opacity-80 transition-opacity">
-                        <div className="w-8 h-8 bg-[#F63049] rounded-lg flex items-center justify-center text-white">
-                            <span className="text-sm">SB</span>
+                    <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                        <div className="relative w-40 h-10">
+                            <Image
+                                src="/logo.png"
+                                alt="Soft Bees Logo"
+                                fill
+                                style={{ objectFit: 'contain', objectPosition: 'left' }}
+                                priority
+                            />
                         </div>
-                        <span>SOFT BEES</span>
                     </Link>
 
                     {/* Navigation */}
