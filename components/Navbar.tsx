@@ -14,13 +14,14 @@ export default function Navbar() {
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                        <div className="relative w-40 h-10">
+                        <div className="relative w-48 h-12">
                             <Image
                                 src="/logo.png"
                                 alt="Soft Bees Logo"
                                 fill
                                 style={{ objectFit: 'contain', objectPosition: 'left' }}
                                 priority
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             />
                         </div>
                     </Link>

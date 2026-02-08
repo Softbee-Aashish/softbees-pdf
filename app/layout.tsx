@@ -1,4 +1,13 @@
 import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Soft Bees - Free Online PDF Tools",
+  description: "Compress, Merge, Organize, and Convert PDFs securely in your browser.",
+  icons: {
+    icon: '/favicon.ico',
+  },
+};
+
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
