@@ -4,7 +4,7 @@
  */
 'use client';
 
-import Image from 'next/image';
+
 import Link from 'next/link';
 
 export default function Navbar() {
@@ -14,16 +14,9 @@ export default function Navbar() {
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                        <div className="relative h-16 w-64">
-                            <Image
-                                src="/logo.png"
-                                alt="Soft Bees Logo"
-                                width={256} // 64 * 4 = 256px
-                                height={64}
-                                priority
-                                className="object-contain"
-                            />
-                        </div>
+                        <span className="text-2xl font-bold text-[#111F35] tracking-tight">
+                            Soft Bees PDF
+                        </span>
                     </Link>
 
                     {/* Navigation */}
