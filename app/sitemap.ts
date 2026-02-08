@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
 
+export const dynamic = "force-static"; // Force static generation for Cloudflare Pages
+
 export default function sitemap(): MetadataRoute.Sitemap {
     const baseUrl = 'https://softbees.com'; // Replace with actual domain if known, or keep generic for now
 
