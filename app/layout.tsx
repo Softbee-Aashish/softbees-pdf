@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AdSenseScript from '@/lib/ads/adsense-script';
@@ -30,6 +31,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-50`}
       >
+        <Script
+          src="https://quge5.com/88/tag.min.js"
+          data-zone="209500"
+          data-cfasync="false"
+          async // Using boolean attribute correctly
+          strategy="afterInteractive"
+        />
+
         {/* Main Content Wrapper - 100% Width, Flex Column */}
         <div className="flex flex-col min-h-screen">
           {children}
