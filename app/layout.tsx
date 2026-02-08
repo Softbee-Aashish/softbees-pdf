@@ -1,13 +1,4 @@
 import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Soft Bees - Free Online PDF Tools",
-  description: "Compress, Merge, Organize, and Convert PDFs securely in your browser.",
-  icons: {
-    icon: '/favicon.ico',
-  },
-};
-
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -26,7 +17,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata = constructMetadata('home');
+export const metadata = {
+  ...constructMetadata('home'),
+  icons: {
+    icon: '/favicon.ico', // Next.js serves app/favicon.ico at this path
+  },
+};
 
 import { Toaster } from 'sonner';
 
