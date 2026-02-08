@@ -22,12 +22,6 @@
         "name": "next"
       }
     ],
-    "types": [
-      "node",
-      "estree",
-      "json-schema",
-      "trusted-types"
-    ],
     "paths": {
       "@/*": [
         "./*"
