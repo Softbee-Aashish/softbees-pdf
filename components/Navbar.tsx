@@ -14,14 +14,14 @@ export default function Navbar() {
                 <div className="flex justify-between items-center h-20">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                        <div className="relative w-48 h-12">
+                        <div className="relative h-12 w-48">
                             <Image
                                 src="/logo.png"
                                 alt="Soft Bees Logo"
-                                fill
-                                style={{ objectFit: 'contain', objectPosition: 'left' }}
+                                width={192} // 48 * 4 = 192px width for 12 * 4 = 48px height (4:1 ratio)
+                                height={48}
                                 priority
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                                className="object-contain" // Tailwind utility for object-fit: contain
                             />
                         </div>
                     </Link>
