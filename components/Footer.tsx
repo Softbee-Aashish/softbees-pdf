@@ -25,7 +25,15 @@ export default function Footer() {
                     </p>
                 </div>
 
-                <p className="text-gray-400 text-xs mt-8">
+                <div className="flex flex-wrap justify-center gap-6 mt-6 mb-8 text-sm text-gray-500">
+                    <Link href="/info/about" className="hover:text-[#F63049] transition-colors">About Us</Link>
+                    <Link href="/info/privacy" className="hover:text-[#F63049] transition-colors">Privacy Policy</Link>
+                    <Link href="/info/terms" className="hover:text-[#F63049] transition-colors">Terms of Service</Link>
+                    <Link href="/info/faq" className="hover:text-[#F63049] transition-colors">FAQ</Link>
+                    <Link href="/info/contact" className="hover:text-[#F63049] transition-colors">Contact</Link>
+                </div>
+
+                <p className="text-gray-400 text-xs mt-4">
                     © {new Date().getFullYear()} Soft Bees. All rights reserved.
                 </p>
             </div>

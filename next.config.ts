@@ -1,7 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // Empty turbopack config to silence the warning
-  turbopack: {},
+  reactStrictMode: true,
+  compress: true,
+  poweredByHeader: false,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
 
   // Ensure public files are served correctly
   async headers() {
@@ -12,6 +16,10 @@ const nextConfig = {
           {
             key: 'Content-Type',
             value: 'application/javascript',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
           },
         ],
       },

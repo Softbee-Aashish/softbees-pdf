@@ -8,17 +8,14 @@
  * @param blob - The file blob to download
  * @param filename - The desired filename (with extension)
  */
-export function downloadBlob(blob: Blob, filename: string): void {
-    // Ensure filename has .pdf extension
-    const finalFilename = filename.endsWith('.pdf') ? filename : `${filename}.pdf`;
-
+export function downloadFile(blob: Blob, filename: string): void {
     // Create temporary URL for the blob
     const url = URL.createObjectURL(blob);
 
     // Create temporary anchor element
     const a = document.createElement('a');
     a.href = url;
-    a.download = finalFilename;
+    a.download = filename;
     a.style.display = 'none';
 
     // Trigger download

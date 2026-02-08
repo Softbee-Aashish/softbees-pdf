@@ -6,11 +6,10 @@
 import * as pdfjsLib from 'pdfjs-dist';
 import { PDFDocument } from 'pdf-lib';
 import { SizeValidator } from './size-validator';
+import { configureWorker } from './worker-config';
 
 // Configure pdfjs worker for Next.js
-if (typeof window !== 'undefined') {
-    pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
-}
+configureWorker();
 
 export class PDFCompressionEngine {
     private targetSizeBytes: number = 0;

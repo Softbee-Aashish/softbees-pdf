@@ -22,11 +22,18 @@ export default function Navbar() {
 
                     {/* Navigation */}
                     <div className="flex items-center space-x-8">
-                        <Link href="/" className="text-gray-300 hover:text-[#F63049] font-medium transition-colors">
+                        <Link href="/" className="text-[#111F35] hover:text-[#F63049] font-medium transition-colors">
                             Home
                         </Link>
-                        <Link href="#" className="text-gray-300 hover:text-[#F63049] font-medium transition-colors">
-                            Tools
+                        <Link href="/tools/compress-pdf" className="text-[#111F35] hover:text-[#F63049] font-medium transition-colors">
+                            Compress
+                        </Link>
+                        <Link href="/tools/merge" className="text-[#111F35] hover:text-[#F63049] font-medium transition-colors">
+                            Merge
+                        </Link>
+
+                        <Link href="/tools/organize-pdf" className="text-[#111F35] hover:text-[#F63049] font-medium transition-colors">
+                            Organize
                         </Link>
                     </div>
                 </div>

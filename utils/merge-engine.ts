@@ -31,5 +31,5 @@ export async function mergePDFs(files: File[]): Promise<Blob> {
     const mergedPdfBytes = await mergedPdf.save();
 
     // 4. Return as Blob
-    return new Blob([mergedPdfBytes], { type: 'application/pdf' });
+    return new Blob([mergedPdfBytes as any], { type: 'application/pdf' });
 }
