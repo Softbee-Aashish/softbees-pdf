@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import AdSenseScript from '@/lib/ads/adsense-script';
-import AdComponent from '@/lib/ads/AdComponent';
+// Removed unused AdSense imports to prevent potential side effects
 
 import { constructMetadata } from '@/utils/metadata-map';
 
