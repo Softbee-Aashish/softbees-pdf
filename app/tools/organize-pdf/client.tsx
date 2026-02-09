@@ -2,7 +2,6 @@
 
 import { useState, useRef } from 'react';
 import Navbar from '@/components/Navbar';
-import AdComponent from '@/lib/ads/AdComponent';
 import { useOrganizerStore } from '@/store/organizerStore'; // FIXED IMPORT
 import OrganizerGrid from '@/components/Organizer/OrganizerGrid';
 import { exportOrganizedPDF } from '@/utils/organizer-export';
@@ -105,10 +104,6 @@ export default function OrganizerPage() {
                     <div className="text-center mb-12">
                         <h1 className="text-4xl font-extrabold mb-4">Organize PDF</h1>
                         <p className="text-[#111F35]/60">Rearrange, rotate, and delete pages. Merge multiple files into one.</p>
-                    </div>
-
-                    <div className="mb-8 flex justify-center">
-                        <AdComponent position="inline" />
                     </div>
 
                     <div

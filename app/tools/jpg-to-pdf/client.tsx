@@ -2,7 +2,6 @@
 
 import { useState, useRef, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
-import AdComponent from '@/lib/ads/AdComponent';
 import { useConverterStore } from '@/store/converterStore';
 import FileGrid from '@/components/Converter/FileGrid';
 import RenameDialog from '@/components/Converter/RenameDialog';
@@ -109,10 +108,6 @@ export default function JpgToPdfPage() {
                     <div className="text-center mb-12">
                         <h1 className="text-4xl font-extrabold mb-4">Image to PDF Converter</h1>
                         <p className="text-[#111F35]/60">Convert JPG, PNG, and WebP images to PDF. Drag and drop to reorder.</p>
-                    </div>
-
-                    <div className="mb-8 flex justify-center">
-                        <AdComponent position="inline" />
                     </div>
 
                     <div

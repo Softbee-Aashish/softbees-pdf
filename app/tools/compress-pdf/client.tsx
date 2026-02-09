@@ -2,7 +2,6 @@
 
 import { useState, useRef, useCallback, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
-import AdComponent from '@/lib/ads/AdComponent';
 import { Upload, FileText, CheckCircle, Loader2, Download, AlertCircle, X } from 'lucide-react';
 import { formatBytes } from '@/utils/formatters';
 import { downloadFile } from '@/utils/file-helpers';
@@ -106,10 +105,6 @@ export default function CompressPage() {
         <div className="text-center mb-12">
           <h1 className="text-4xl font-extrabold mb-4">PDF Compressor</h1>
           <p className="text-[#111F35]/60">Fast, secure, and free. Compress PDFs to your exact target size.</p>
-        </div>
-
-        <div className="mb-8 flex justify-center">
-          <AdComponent position="inline" />
         </div>
 
         {/* State 1: Upload (Empty) */}

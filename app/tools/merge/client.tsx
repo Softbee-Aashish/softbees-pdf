@@ -2,7 +2,6 @@
 
 import { useState, useRef } from 'react';
 import Navbar from '@/components/Navbar';
-import AdComponent from '@/lib/ads/AdComponent';
 import { mergePDFs } from '@/utils/merge-engine';
 import { Upload, X, ArrowUp, ArrowDown, FileText, CheckCircle, Loader2, Download } from 'lucide-react';
 import { formatBytes } from '@/utils/formatters';
@@ -101,14 +100,10 @@ export default function MergePage() {
                     <p className="text-[#111F35]/60">Combine multiple PDFs into one unified document in seconds.</p>
                 </div>
 
-                <div className="mb-8 flex justify-center">
-                    <AdComponent position="inline" />
-                </div>
-
                 {/* State 1: Upload (Empty State) */}
                 {files.length === 0 && (
                     <div
-                        className={`border-2 border-dashed rounded-3xl p-16 text-center transition-all cursor-pointer outline-none focus:ring-4 focus:ring-[#F63049]/20 ${isDragging ? 'border-[#F63049] bg-[#FFF0F3]' : 'border-[#8A244B]/30 hover:border-[#F63049] bg-white'
+                        className={`border-2 border-dashed rounded-3xl p-16 text-center transition-all cursor-pointer outline-none focus:ring-4 focus:ring-[#8B5CF6]/20 ${isDragging ? 'border-[#8B5CF6] bg-purple-50' : 'border-purple-200 hover:border-[#8B5CF6] bg-white'
                             }`}
                         onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
                         onDragLeave={() => setIsDragging(false)}
@@ -132,11 +127,11 @@ export default function MergePage() {
                             ref={fileInputRef}
                             onChange={(e) => handleFiles(e.target.files)}
                         />
-                        <div className="w-20 h-20 bg-[#FFF0F3] rounded-full flex items-center justify-center mx-auto mb-6 text-[#F63049]">
+                        <div className="w-20 h-20 bg-purple-50 rounded-full flex items-center justify-center mx-auto mb-6 text-[#8B5CF6]">
                             <Upload className="w-10 h-10" />
                         </div>
                         <h3 className="text-2xl font-bold mb-2">Drop PDFs here to Merge</h3>
-                        <span className="inline-block px-6 py-3 bg-[#F63049] text-white font-bold rounded-xl mt-4 hover:bg-[#D02752] transition-colors shadow-lg shadow-[#F63049]/20">
+                        <span className="inline-block px-6 py-3 bg-[#8B5CF6] text-white font-bold rounded-xl mt-4 hover:bg-[#7C3AED] transition-colors shadow-lg shadow-[#8B5CF6]/20">
                             Select PDF Files
                         </span>
                     </div>
