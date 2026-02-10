@@ -1,8 +1,4 @@
 import { read, utils, write } from 'xlsx';
-import * as pdfjsLib from 'pdfjs-dist';
-
-// Configure PDF.js worker
-pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
 
 interface TextItem {
     str: string;
@@ -28,6 +24,10 @@ interface ColumnRange {
 }
 
 export async function convertPDFToExcel(file: File, onProgress: (status: string, progress: number) => void): Promise<Blob> {
+    // Dynamic import to avoid SSR issues
+    const pdfjsLib = await import('pdfjs-dist');
+    pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+
     const arrayBuffer = await file.arrayBuffer();
     const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
     const totalPages = pdf.numPages;

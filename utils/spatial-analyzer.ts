@@ -1,4 +1,13 @@
-import { TextItem } from 'pdfjs-dist/types/src/display/api';
+// Local type definition to avoid importing from pdfjs-dist during SSR
+export interface PDFTextItem {
+    str: string;
+    dir: string;
+    width: number;
+    height: number;
+    transform: number[];
+    fontName: string;
+    hasEOL: boolean;
+}
 
 export interface SpatialTextItem {
     str: string;

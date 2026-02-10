@@ -1,9 +1,5 @@
 import { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell, WidthType, BorderStyle } from "docx";
-import * as pdfjsLib from "pdfjs-dist";
 import { createWorker } from 'tesseract.js';
-
-// Configure PDF.js worker
-pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
 
 interface TextItem {
     str: string;
@@ -21,6 +17,10 @@ interface PageData {
 }
 
 export async function convertPDFToWord(file: File, onProgress: (status: string, progress: number) => void): Promise<Blob> {
+    // Dynamic import to avoid SSR issues
+    const pdfjsLib = await import('pdfjs-dist');
+    pdfjsLib.GlobalWorkerOptions.workerSrc = '/pdf.worker.min.mjs';
+
     const arrayBuffer = await file.arrayBuffer();
     const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
     const totalPages = pdf.numPages;
